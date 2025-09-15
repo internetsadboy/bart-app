@@ -1,0 +1,49 @@
+{
+    "name": "Pleasant Hill/Contra Costa Centre",
+    "abbr": "PHIL",
+    "etd": [
+        {
+            "destination": "SF Airport",
+            "abbreviation": "SFIA",
+            "limited": "0",
+            "estimate": [
+                {
+                    "minutes": "Leaving",
+                    "platform": "2",
+                    "direction": "South",
+                    "length": "8",
+                    "color": "YELLOW",
+                    "hexcolor": "#ffff33",
+                    "bikeflag": "1",
+                    "delay": "111",
+                    "cancelflag": "0",
+                    "dynamicflag": "0"
+                },
+                {
+                    "minutes": "18",
+                    "platform": "2",
+                    "direction": "South",
+                    "length": "8",
+                    "color": "YELLOW",
+                    "hexcolor": "#ffff33",
+                    "bikeflag": "1",
+                    "delay": "0",
+                    "cancelflag": "0",
+                    "dynamicflag": "0"
+                },
+                {
+                    "minutes": "38",
+                    "platform": "2",
+                    "direction": "South",
+                    "length": "8",
+                    "color": "YELLOW",
+                    "hexcolor": "#ffff33",
+                    "bikeflag": "1",
+                    "delay": "0",
+                    "cancelflag": "0",
+                    "dynamicflag": "0"
+                }
+            ]
+        }
+    ]
+}
