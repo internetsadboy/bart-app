@@ -22,7 +22,7 @@ export function minutesToClock(minutesStr: string) {
 
 export const STATIONS: Array<{ code: string; name: string }> = [
   // top five stations are curated
-  { code: "PHIL", name: "Pleasant Hill / Contra Costa Centre" },
+  { code: "PHIL", name: "Pleasant Hill / Contra Costa Center" },
   { code: "EMBR", name: "Embarcadero (SF)" },
   { code: "CIVC", name: "Civic Center / UN Plaza" },
   { code: "16TH", name: "16th St Mission (SF)" },
