@@ -1,0 +1,29 @@
+{
+  "root": {
+    "schedule": {
+      "request": {
+        "trip": [
+          {
+            "origin": "PHIL",
+            "destination": "CIVC",
+            "fare": "6.30",
+            "origTimeMin": "10:45 AM",
+            "origTimeDate": "09/18/2025",
+            "destTimeMin": "11:23 AM",
+            "destTimeDate": "09/18/2025",
+            "clipper": "2.70",
+            "tripTime": "38",
+            "leg": [
+              {
+                "order": "1",
+                "line": "RED",
+                "origTimeMin": "10:45 AM",
+                "destTimeMin": "11:23 AM"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
