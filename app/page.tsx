@@ -14,6 +14,7 @@ type ApiDeparture = {
 export default function Home() {
   const [station, setStation] = useState<string>("PHIL");
   const [destinationStation, setDestinationStation] = useState<string>("EMBR");
+  const [finalDestination, setFinalDestination] = useState<string>("");
   const [dir, setDir] = useState<Dir>("s");
   const [items, setItems] = useState<ApiDeparture[]>([]);
   const [stationName, setStationName] = useState<string>("Pleasant Hill / Contra Costa Centre");
@@ -49,6 +50,8 @@ const visibleItems = useMemo(() => {
       });
       if (!res.ok) throw new Error("Network error");
       const data = await res.json();
+  
+      setFinalDestination(data.items[0].destination ?? "");
       setItems(data.items ?? []);
       setStationName(data.station ?? currentStation);
       setLastUpdated(new Date().toLocaleTimeString());
@@ -92,7 +95,7 @@ const visibleItems = useMemo(() => {
   return (
     <main className="mx-auto max-w-2xl p-6">
       <h1 className="text-xl mb-4">SELECT STATION</h1>
-      <h1 className="text-2xl font-bold mb-6 overflow-hidden">{`${durationMin} ${station}  → ${destinationStation}`}</h1>
+      <h1 className="text-2xl font-bold mb-6 overflow-hidden">{`${durationMin !== null ? durationMin : "00"} ${station}  → ${destinationStation}`}</h1>
 
       {/* Station Selector */}
       <section className="flex flex-col mb-6 gap-2 text-xl">
@@ -120,6 +123,8 @@ const visibleItems = useMemo(() => {
           </select>
         </div>
 
+        
+
         {/* Dir Toggle */}
         <div className="border flex flex-col mt-2">
           <button
@@ -138,6 +143,9 @@ const visibleItems = useMemo(() => {
           >
             North
           </button>
+        </div>
+        <div className="flex mt-2 font-bold tracking-wide">Direction
+          <span className="ml-2 font-medium">{`-- ${finalDestination}`}</span>
         </div>
       </section>
 
@@ -166,7 +174,7 @@ const visibleItems = useMemo(() => {
                 const departIn = d.minutes === "Leaving" ? 0 : Number(d.minutes);
                 const leavesClock = minutesToClock(String(departIn));
                 const arrivesClock =
-                  durationMin != null
+                  durationMin !== null
                     ? minutesToClock(String(departIn + durationMin))
                     : "—";
                 return (
